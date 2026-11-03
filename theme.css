@@ -1,0 +1,164 @@
+/* =========================================================================
+   DESIGN „NACHTTISCH“ (Prototyp)
+   Billardtisch bei Nacht: tiefes Filzgrün, warmes Lampenlicht von oben,
+   Messing für Ränge und Aktionen, Holz der Bande für Leisten,
+   Kreideblau für Zustände (frei, live). Schrift: Barlow Condensed wie das
+   Neonschild des Cafés, dazu Manrope für Text.
+   Wird nach app.css geladen und überschreibt nur Optik, keine Logik.
+   ========================================================================= */
+:root{
+  color-scheme:dark;
+  /* Filz */
+  --felt-deep:#061a12;
+  --felt:#0c3324;
+  --felt-2:#114331;
+  --felt-3:#17573f;
+  /* Holz der Bande */
+  --wood:#2b170e;
+  --wood-2:#4a2a19;
+  /* Messing */
+  --brass:#c9a25e;
+  --brass-hi:#f0dcab;
+  --brass-lo:#8f6b32;
+  --brass-grad:linear-gradient(180deg,#f3e1b3 0%,#d3ae68 45%,#a57d3b 100%);
+  /* Elfenbein & Kreide */
+  --ivory:#f3ecdc;
+  --chalk:#7fb6e8;
+  /* Kugelfarben */
+  --b1:#f0bf2e;--b2:#2a62c0;--b3:#d33a2e;--b4:#6e3fa3;--b5:#e8732a;--b6:#2c8a4f;--b7:#8b2c2b;--b8:#151515;
+
+  /* Tokens der bestehenden App neu belegt */
+  --bg:var(--felt-deep);
+  --surface:#0d2e21;
+  --surface-2:#123b2b;
+  --ink:var(--ivory);
+  --muted:#9fb7a8;
+  --line:rgba(201,162,94,.2);
+  --teal:var(--brass-hi);
+  --teal-dark:#14382a;
+  --cream:var(--brass-hi);
+  --danger:#ff9d8f;
+  --warning:#f0c27a;
+  --radius:18px;
+
+  --font-display:"Barlow Condensed","Arial Narrow","Roboto Condensed","DejaVu Sans Condensed",sans-serif;
+  --font-ui:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --card:linear-gradient(180deg,rgba(255,255,255,.035),rgba(0,0,0,.16)),var(--surface);
+  --card-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 12px 28px rgba(0,0,0,.35);
+  --felt-noise:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+  font-family:var(--font-ui);
+}
+
+/* Tisch: Filzstruktur, Lampenlicht, Vignette */
+body{
+  font-family:var(--font-ui);
+  background:
+    radial-gradient(ellipse 85% 42% at 50% -6%,rgba(255,214,140,.30),rgba(255,214,140,.08) 45%,transparent 70%),
+    radial-gradient(ellipse 140% 90% at 50% 40%,transparent 55%,rgba(0,0,0,.55) 100%),
+    var(--felt-noise),
+    linear-gradient(180deg,var(--felt) 0%,var(--felt-deep) 70%);
+  background-attachment:fixed;
+}
+
+/* Typografie */
+h1,h2{font-family:var(--font-display);text-transform:uppercase;font-weight:700;letter-spacing:.01em}
+h1{font-size:clamp(2.3rem,9vw,3.4rem);line-height:.95;margin-bottom:10px}
+h2{font-size:1.45rem;letter-spacing:.03em}
+h3{font-weight:700}
+.eyebrow{font-family:var(--font-display);font-weight:600;font-size:.82rem;letter-spacing:.22em;color:var(--brass)}
+.muted,.hint{color:var(--muted)}
+a{color:var(--brass-hi)}
+
+/* Kopf */
+.site-header{border:0;padding-top:calc(16px + env(safe-area-inset-top));padding-bottom:12px}
+.brand img{border-radius:12px;box-shadow:0 0 0 1px var(--line),0 8px 18px rgba(0,0,0,.45)}
+.brand-venue{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.brand-title{font-family:var(--font-display);text-transform:uppercase;font-size:1.45rem;letter-spacing:.06em;color:var(--ivory)}
+.account-link{font-size:.78rem;color:var(--muted)}
+#profile-switch{font-size:.72rem;color:var(--muted)}
+
+/* Navigation als Holzbande mit Messingkante */
+.bottom-nav{
+  background:linear-gradient(180deg,var(--wood-2),var(--wood))!important;
+  border-top:2px solid transparent!important;border-image:var(--brass-grad) 1!important;
+  box-shadow:0 -10px 30px rgba(0,0,0,.45)}
+.bottom-nav a{color:#c9b39a;border-radius:10px}
+.bottom-nav a[aria-current="page"]{color:var(--brass-hi)!important;background:rgba(0,0,0,.22)!important}
+.bottom-nav a[aria-current="page"]:before{width:7px!important;height:7px!important;border-radius:50%;top:4px!important;background:var(--chalk)!important;box-shadow:0 0 8px var(--chalk)}
+@media(min-width:1000px){.bottom-nav{border-radius:16px 16px 0 0;border-image:none!important;border-top:2px solid var(--brass)!important}}
+.site-footer{border-top:1px solid var(--line);color:var(--muted)}
+
+/* Flächen */
+.panel,.table-wrap,.rating-card,.team-panel,.match-card,.home-match-row,.scoreboard,.live-scoreboard,.invite-choice,.empty-state{
+  background:var(--card)!important;border:1px solid var(--line)!important;border-radius:var(--radius)!important;box-shadow:var(--card-shadow)}
+.empty-state{border-style:dashed!important}
+.match-card:hover,.home-match-row:hover{border-color:rgba(201,162,94,.5)!important}
+.callout{background:rgba(0,0,0,.18)!important;border-left:3px solid var(--brass)!important;border-radius:0 14px 14px 0}
+.callout.warning{border-left-color:var(--warning)!important}
+.callout.error{border-left-color:var(--danger)!important;background:rgba(80,20,15,.25)!important}
+.notice{background:linear-gradient(90deg,#173f2e,#0f2f22)!important;border:1px solid rgba(201,162,94,.45)!important;border-radius:16px;box-shadow:0 12px 30px rgba(0,0,0,.45)}
+.notice.error{background:#3a1814!important;border-color:#8a4636!important}
+.connection{background:#3a2a14;color:var(--warning)}
+hr{border-top-color:var(--line)}
+
+/* Buttons: Messing für die Hauptaktion, sonst Konturen */
+.btn{border-radius:14px;border:1px solid var(--line);background:rgba(0,0,0,.2);color:var(--ivory);font-weight:700}
+.btn:hover{border-color:var(--brass);background:rgba(0,0,0,.28)}
+.btn.primary,.btn.cream,.home-start{
+  background:var(--brass-grad)!important;border:0!important;color:#2a1a08!important;font-weight:800;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 -2px 0 rgba(80,50,10,.35),0 10px 22px rgba(0,0,0,.35)}
+.btn.primary:hover,.btn.cream:hover,.home-start:hover{filter:brightness(1.06);color:#2a1a08!important}
+.btn.danger{background:rgba(80,20,15,.35);border-color:#8a4636;color:var(--danger)}
+.text-button{color:var(--brass-hi)}
+
+/* Formulare & Auswahl */
+.field span{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;color:var(--muted)}
+.field input,.field select,.field textarea,input.control,select.control,textarea.control{background:rgba(0,0,0,.28)!important;border:1px solid rgba(201,162,94,.28)!important;color:var(--ivory);border-radius:14px}
+.choice{background:var(--card)!important;border:1px solid var(--line)!important;border-radius:16px!important}
+.choice strong{font-family:var(--font-display);font-size:1.25rem;text-transform:uppercase;letter-spacing:.03em}
+.choice[aria-pressed="true"]{background:linear-gradient(180deg,rgba(240,220,171,.16),rgba(0,0,0,.1)),var(--surface-2)!important;border-color:var(--brass)!important;box-shadow:0 0 0 1px var(--brass),0 0 24px rgba(201,162,94,.2)}
+.choice[aria-pressed="true"] small{color:var(--brass-hi)!important}
+.steps li{border-top-color:rgba(201,162,94,.2)}
+.steps li.active{color:var(--brass-hi);border-top-color:var(--brass)}
+.steps li.complete{border-top-color:var(--brass-lo)}
+
+/* Tabelle */
+th{background:rgba(0,0,0,.25)!important;color:var(--muted);font-family:var(--font-display);text-transform:uppercase;letter-spacing:.12em}
+td,th{border-color:var(--line)!important}
+.own-row{background:linear-gradient(90deg,rgba(201,162,94,.2),rgba(201,162,94,.04))!important}
+
+/* Status */
+.badge{border-radius:999px;font-weight:700}
+.badge.confirmed{color:var(--chalk);border-color:rgba(127,182,232,.4);background:rgba(127,182,232,.1)}
+.badge.pending{color:var(--warning);border-color:#7a5c2c;background:rgba(240,194,122,.08)}
+.badge.playing{color:var(--brass-hi);border-color:var(--line)}
+.score{font-family:var(--font-display);font-weight:700}
+
+/* Startseite */
+.home-greeting h1{font-size:clamp(2.4rem,10vw,3.4rem)}
+.home-eight{box-shadow:inset -6px -8px 14px rgba(0,0,0,.6),0 12px 26px rgba(0,0,0,.55)!important}
+.home-profile-strip{border-color:var(--line)!important}
+.home-profile-strip span{font-family:var(--font-display);letter-spacing:.14em}
+.home-profile-strip strong{font-family:var(--font-display);text-transform:uppercase;font-size:1.5rem;color:var(--brass-hi)}
+.home-row-icon{background:rgba(201,162,94,.14)!important;color:var(--brass-hi)!important}
+.home-join{background:var(--card)!important;border:1px solid var(--line)!important;border-radius:16px!important;color:var(--ivory)!important}
+.home-start{border-radius:16px!important;font-family:var(--font-display);text-transform:uppercase;letter-spacing:.06em;font-size:1.2rem}
+.home-section-heading h2{font-size:1.2rem}
+
+/* Profil */
+.rank{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.02em;color:var(--brass-hi)!important;font-size:1.6rem!important}
+.stats b{font-family:var(--font-display);font-size:1.5rem}
+progress{accent-color:var(--brass)}
+
+/* Laufende Partie: schmale Leiste */
+.active-resume{background:rgba(6,26,18,.92)!important;border-bottom:1px solid var(--line)!important;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+
+/* Kompakte Filterleiste */
+.page-heading{margin-bottom:18px}
+.filters{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto;gap:8px!important;align-items:end;margin-bottom:16px!important}
+.filters .field{margin:0!important}
+.filters select{min-height:44px;font-size:.92rem}
+.filters .btn{margin:0!important;min-height:44px;width:auto!important;padding:8px 13px;font-size:0}
+.filters .btn::before{content:"↻";font-size:1.2rem}
+
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}

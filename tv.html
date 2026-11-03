@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; media-src 'self' blob: https:; connect-src 'self' https://v2202610446743548792.goodsrv.de">
+  <title>Café-Bildschirm · Billardcafé Merzig</title>
+  <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./fonts.css">
+  <link rel="stylesheet" href="./tv-player.css">
+  <style>html,body{margin:0;height:100%;background:#06100c;overflow:hidden}</style>
+</head>
+<body>
+  <!-- Café-Bildschirm zum Öffnen im Browser des Fernsehers: tv.html?bildschirm=haupt
+       Kein Login nötig: Der Bildschirm zeigt nur öffentliche Inhalte (Tische ohne Namen, Rangliste, Turnier, Folien). -->
+  <div id="tv" class="tvp-root"></div>
+  <script src="./deployment-config.js"></script>
+  <script src="./icons.js"></script>
+  <script src="./tv-player.js"></script>
+  <script src="./tv-start.js"></script>
+</body>
+</html>

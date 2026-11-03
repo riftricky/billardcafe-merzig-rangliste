@@ -1,0 +1,102 @@
+<!doctype html>
+<!-- AUTOMATISCH ERZEUGT von tools/build_demo.py aus index.html – nicht von Hand ändern. -->
+
+<html lang="de">
+<head>
+  <meta name="referrer" content="no-referrer">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#0c3324">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Billardcafé">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description" content="Partien spielen, Ergebnisse gemeinsam bestätigen und die persönliche Entwicklung im Billardcafé Merzig verfolgen.">
+  <title>Billardcafé Merzig · Demo</title>
+  <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="./fonts.css">
+  <link rel="stylesheet" href="./app.css">
+  <link rel="stylesheet" href="./opening.css">
+  <link rel="stylesheet" href="./scorekeeper.css">
+  <link rel="stylesheet" href="./theme.css">
+  <link rel="stylesheet" href="./features.css">
+  <link rel="stylesheet" href="./tv-player.css">
+  <script src="./demo-config.js" defer></script>
+  <script src="./demo-api.js" defer></script>
+  
+  <script src="./opening.js" defer></script>
+  <script src="./rules.js" defer></script>
+  <script src="./scorekeeper.js" defer></script>
+  <script src="./vendor/qrcode.js" defer></script>
+  <script src="./icons.js" defer></script>
+  <script src="./tv-player.js" defer></script>
+  <script src="./pwa.js" defer></script>
+  <script src="./features.js" defer></script>
+  <script src="./admin.js" defer></script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <section id="app-opening" class="app-opening" aria-label="Willkommen im Billardcafé Merzig" hidden>
+    <div class="opening-mark">
+      <img src="./branding/cafe-logo.svg" width="360" height="300" alt="Billard Café – türkisweißes Neonlogo mit Billardspieler">
+      <p class="opening-subtitle">Rangliste</p>
+    </div>
+    <div class="opening-actions">
+      <button id="opening-continue" class="opening-continue" type="button">Weiter zur Startseite</button>
+      <a class="opening-install" href="#installieren">Wie installiere ich die App?</a>
+    </div>
+  </section>
+  <div id="app-shell">
+  <div class="fx-demo-bar" role="note"><strong>Prototyp</strong><span>Erfundene Daten · neu laden setzt alles zurück.</span><span class="fx-demo-roles" role="group" aria-label="Demo-Ansicht"><button type="button" data-demo-as="player" aria-pressed="true">Spieler</button><button type="button" data-demo-as="owner" aria-pressed="false">Inhaber</button><button type="button" data-demo-as="staff" aria-pressed="false">Theke</button></span></div>
+  <a class="skip-link" href="#inhalt" data-action="skip-content">Zum Inhalt</a>
+  <header class="site-header">
+    <a class="brand" href="#spielen" aria-label="Billardcafé Merzig Rangliste · Startseite">
+      <img src="./icons/icon.svg" width="46" height="46" alt="">
+      <span><span class="brand-venue">Billardcafé Merzig</span><span class="brand-title">Rangliste</span></span>
+    </a>
+    <div class="account-controls"><a id="account-link" class="account-link" href="#profil">Anmelden</a><button id="profile-switch" class="text-button" type="button" data-action="profile-switch" hidden>Profil wechseln</button></div>
+  </header>
+  <aside id="active-resume" class="active-resume" aria-label="Laufende Partien wiederaufnehmen" hidden></aside>
+  <div id="connection" class="connection" role="status" aria-live="polite" hidden></div>
+  <div id="notice" class="notice-wrap" aria-live="polite" aria-atomic="true"></div>
+  <main id="inhalt" tabindex="-1">
+    <div class="empty-state"><p class="eyebrow">Willkommen am Tisch</p><h1>Die Rangliste wird geladen.</h1><p>Verbindung zum Billardcafé Merzig wird hergestellt …</p></div>
+  </main>
+  <noscript><p class="noscript">Bitte JavaScript aktivieren, um Partien einzutragen und die Rangliste zu laden.</p></noscript>
+  <footer class="site-footer"><span>Billardcafé Merzig Rangliste</span><a href="#regeln">Spielregeln</a><a href="#installieren">Wie installiere ich die App?</a><a href="#profil/hilfe">Café-Wertung &amp; Hilfe</a><small class="fx-credit">Icons: Lorc &amp; Delapouite, <a href="https://game-icons.net" target="_blank" rel="noopener noreferrer">game-icons.net</a>, CC BY 3.0</small></footer>
+  <nav class="bottom-nav" aria-label="Hauptnavigation">
+    <a href="#spielen" data-tab="spielen"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m6 15 12-6M6 8h.01M18 16h.01"/></svg><span>Spielen</span></a>
+    <a href="#rangliste" data-tab="rangliste"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 21V10h8v11M3 21V15h5m8-8h5v14M2 21h20M12 3v3m-1.5-1.5h3"/></svg><span>Rangliste</span></a>
+    <a href="#erfolge" data-tab="erfolge"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-1.5 7 5-3 5 3-1.5-7"/></svg><span>Erfolge</span></a>
+    <a href="#events" data-tab="events"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>Events</span></a>
+    <a href="#profil" data-tab="profil"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg><span>Profil</span></a>
+  </nav>
+  <button id="match-rules-button" class="btn match-rules-button" type="button" data-action="open-match-rules" aria-haspopup="dialog" aria-controls="rules-dialog" hidden>Spielregeln</button>
+  <dialog id="rules-dialog" class="rules-dialog" aria-labelledby="rules-dialog-title" aria-describedby="rules-dialog-description">
+    <header class="rules-dialog-header">
+      <div><p class="eyebrow">DBU · Originaldokument</p><h2 id="rules-dialog-title">Spielregeln</h2></div>
+      <button id="rules-close" class="btn small" type="button" autofocus>← Zurück</button>
+    </header>
+    <div id="rules-dialog-content" class="rules-dialog-content"></div>
+  </dialog>
+  <dialog id="live-sheet" class="sheet-dialog" aria-labelledby="sheet-title">
+    <header class="sheet-header">
+      <div><p class="eyebrow">14/1 · digitales Spielblatt</p><h2 id="sheet-title">Live-Spielblatt</h2></div>
+      <div class="sheet-header-controls">
+        <button type="button" class="btn small" data-sk="minimize">Minimieren</button>
+        <button type="button" class="btn small" data-sk="rules">Spielregeln</button>
+        <button type="button" class="btn small cream" data-sk="finish-view">Spielende</button>
+        <button type="button" class="btn small danger" data-sk="abort-view">Spiel abbrechen</button>
+      </div>
+    </header>
+    <div class="sheet-orientation">Für mehr Platz das Gerät ins Querformat drehen. Alle Bedienelemente bleiben auch hochkant erreichbar.</div>
+    <div id="sheet-content" class="sheet-content"></div>
+  </dialog>
+  <dialog id="abort-dialog" class="abort-dialog" aria-labelledby="abort-title">
+    <div id="abort-content"></div>
+  </dialog>
+  </div>
+</body>
+</html>

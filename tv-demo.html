@@ -1,0 +1,26 @@
+<!doctype html>
+<!-- AUTOMATISCH ERZEUGT von tools/build_demo.py aus tv.html – nicht von Hand ändern. -->
+
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Café-Bildschirm · Demo</title>
+  <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./fonts.css">
+  <link rel="stylesheet" href="./tv-player.css">
+  <style>html,body{margin:0;height:100%;background:#06100c;overflow:hidden}</style>
+</head>
+<body>
+  <!-- Café-Bildschirm zum Öffnen im Browser des Fernsehers: tv.html?bildschirm=haupt
+       Kein Login nötig: Der Bildschirm zeigt nur öffentliche Inhalte (Tische ohne Namen, Rangliste, Turnier, Folien). -->
+  <div id="tv" class="tvp-root"></div>
+  <script>window.BCM_DEMO_TV = true;</script>
+  <script src="./demo-config.js"></script>
+  <script src="./demo-api.js"></script>
+  <script src="./icons.js"></script>
+  <script src="./tv-player.js"></script>
+  <script src="./tv-start.js"></script>
+</body>
+</html>

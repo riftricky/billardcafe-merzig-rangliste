@@ -1,0 +1,7 @@
+/* NEU: Schriften selbst gehostet (keine Anfragen an Google, funktioniert offline und mit der CSP font-src 'self').
+   Lateinisch inkl. Umlaute, € und Pfeile. Lizenz: SIL Open Font License 1.1 – siehe fonts/OFL-*.txt */
+@font-face{font-family:"Barlow Condensed";font-style:normal;font-weight:500;font-display:swap;src:url(./fonts/barlow-condensed-500.woff) format("woff")}
+@font-face{font-family:"Barlow Condensed";font-style:normal;font-weight:600;font-display:swap;src:url(./fonts/barlow-condensed-600.woff) format("woff")}
+@font-face{font-family:"Barlow Condensed";font-style:normal;font-weight:700;font-display:swap;src:url(./fonts/barlow-condensed-700.woff) format("woff")}
+@font-face{font-family:"Manrope";font-style:normal;font-weight:200 800;font-display:swap;src:url(./fonts/manrope-var.woff) format("woff")}
+@font-face{font-family:"Caveat";font-style:normal;font-weight:400 700;font-display:swap;src:url(./fonts/caveat-var.woff) format("woff")}

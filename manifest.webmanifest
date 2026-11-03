@@ -1,17 +1,36 @@
 {
   "id": "./",
   "name": "Billardcafé Merzig Rangliste",
-  "short_name": "Merzig Rangliste",
-  "description": "Deine Partien und persönliche Billard-Rangliste im Billardcafé Merzig.",
+  "short_name": "Billardcafé",
+  "description": "Rangliste, Monatsligen, Turniere, Bonusheft und Events im Billardcafé Merzig.",
   "lang": "de",
+  "dir": "ltr",
   "start_url": "./#spielen",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#10271f",
-  "theme_color": "#242724",
+  "display_override": ["standalone", "minimal-ui"],
+  "launch_handler": {"client_mode": "focus-existing"},
+  "background_color": "#061a12",
+  "theme_color": "#0c3324",
+  "categories": ["sports", "entertainment", "lifestyle"],
   "icons": [
     {"src": "./icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any"},
     {"src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
-    {"src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
+    {"src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "./icons/icon-maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable"},
+    {"src": "./icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"},
+    {"src": "./icons/badge-96.png", "sizes": "96x96", "type": "image/png", "purpose": "monochrome"}
+  ],
+  "shortcuts": [
+    {"name": "Partie starten", "short_name": "Spielen", "url": "./#spielen/neu", "icons": [{"src": "./icons/shortcut-eight-ball.png", "sizes": "96x96", "type": "image/png"}]},
+    {"name": "Rangliste", "url": "./#rangliste", "icons": [{"src": "./icons/shortcut-podium.png", "sizes": "96x96", "type": "image/png"}]},
+    {"name": "Erfolge & Bonusheft", "short_name": "Erfolge", "url": "./#erfolge", "icons": [{"src": "./icons/shortcut-sport-medal.png", "sizes": "96x96", "type": "image/png"}]},
+    {"name": "Events & Turniere", "short_name": "Events", "url": "./#events", "icons": [{"src": "./icons/shortcut-calendar.png", "sizes": "96x96", "type": "image/png"}]}
+  ],
+  "screenshots": [
+    {"src": "./icons/screens/start.jpg", "sizes": "780x1688", "type": "image/jpeg", "form_factor": "narrow", "label": "Startseite: am Tisch spielen, freie Tische, Wochenaufgaben"},
+    {"src": "./icons/screens/rangliste.jpg", "sizes": "780x1688", "type": "image/jpeg", "form_factor": "narrow", "label": "Monatsliga mit Siegerpodest"},
+    {"src": "./icons/screens/erfolge.jpg", "sizes": "780x1688", "type": "image/jpeg", "form_factor": "narrow", "label": "Bonusheft und Wochenaufgaben"},
+    {"src": "./icons/screens/cafe-tv.jpg", "sizes": "1920x1080", "type": "image/jpeg", "form_factor": "wide", "label": "Café-Bildschirm mit Tischen und Turnier"}
   ]
 }
